@@ -1,20 +1,29 @@
 {
+  "name": "iigth-portfolio-ts-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "snowpack dev",
-    "build": "snowpack build",
-    "test": "echo \"This template does not include a test runner by default.\" && exit 1",
-    "format": "prettier --write \"src/**/*.{ts,js}\"",
-    "lint": "prettier --check \"src/**/*.{ts,js}\""
+    "build": "tsc",
+    "start": "npx tsc && node dist/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "canvas-confetti": "^1.2.0"
+    "cors": "^2.8.5",
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "pg": "^8.11.0"
   },
   "devDependencies": {
-    "@snowpack/plugin-typescript": "^1.2.1",
-    "@types/canvas-confetti": "^1.0.0",
-    "@types/snowpack-env": "^2.3.3",
-    "prettier": "^2.2.1",
-    "snowpack": "^3.3.7",
-    "typescript": "^4.2.4"
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.2.5",
+    "@types/pg": "^8.10.1",
+    "nodemon": "^2.0.22",
+    "typescript": "^5.1.3"
   }
 }
