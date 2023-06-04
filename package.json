@@ -4,10 +4,16 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "pre-commit": [
+    "ts.check",
+    "build",
+    "add-build"
+],
   "scripts": {
-    "build": "tsc",
-    "start": "npx tsc && node dist/app.js",
-    "dev": "npx tsc && nodemon dist/app.js",
+    "start": "nodemon src/index.ts",
+    "build": "rimraf dist && tsc",
+    "ts.check": "tsc --project tsconfig.json",
+    "add-build": "git add dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -25,6 +31,8 @@
     "@types/node": "^20.2.5",
     "@types/pg": "^8.10.1",
     "nodemon": "^2.0.22",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^5.0.1",
     "typescript": "^5.1.3"
   }
 }
